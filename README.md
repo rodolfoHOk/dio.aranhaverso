@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🕷️ AranhaVerso 🕷️
 
-## Getting Started
+> Live da DIO: Criando um carrossel parallax do AranhaVerso com React, Next.js 13 e Framer Motion
 
-First, run the development server:
+## Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Typescript
+- React Js
+- Next Js
+- Tailwind CSS
+- Framer Motion
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## References
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[Notion](https://www.notion.so/Live-Criando-um-carrossel-parallax-do-Aranhaverso-com-React-Next-js-13-e-Framer-Motion-2aba63c113244da593a77494b558f46a)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[Figma](https://www.figma.com/file/4IPV5HoNvUfzOVzeeTlSlM/Landpage---SpiderVerse-(Copy)?type=design&node-id=3405-20447&t=BGnl7gtQPixBp42d-0)
 
-## Learn More
+## How to Run
 
-To learn more about Next.js, take a look at the following resources:
+### Requisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Run
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- clone repository with git
+- npm install
+- npm run dev
