@@ -1,6 +1,6 @@
 'use client';
 
-import { DragEvent, useEffect, useMemo, useState } from 'react';
+import { DragEvent, TouchEvent, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { HeroDetails } from '../HeroDetails';
@@ -43,6 +43,22 @@ export function Carousel({ heroes, activeId }: IProps) {
     }
 
     const endInteractionPosition = event.clientX;
+    const diffPosition = endInteractionPosition - startInteractionPosition;
+
+    const newPosition = diffPosition > 0 ? -1 : 1;
+    handleChangeActiveHeroIndex(newPosition);
+  }
+
+  function handleTouchStart(event: TouchEvent<HTMLDivElement>) {
+    setStartInteractionPosition(event.touches[0].clientX);
+  }
+
+  function handleTouchEnd(event: TouchEvent<HTMLDivElement>) {
+    if (!startInteractionPosition) {
+      return;
+    }
+
+    const endInteractionPosition = event.changedTouches[0].clientX;
     const diffPosition = endInteractionPosition - startInteractionPosition;
 
     const newPosition = diffPosition > 0 ? -1 : 1;
@@ -119,6 +135,8 @@ export function Carousel({ heroes, activeId }: IProps) {
           className="carousel-wrapper"
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <AnimatePresence mode="popLayout">
             {visibleHeroes.map((hero, position) => (
