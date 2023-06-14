@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { DragEvent, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { HeroDetails } from '../HeroDetails';
@@ -26,8 +26,27 @@ export function Carousel({ heroes, activeId }: IProps) {
     heroes.findIndex((hero) => hero.id === activeId) - 1
   );
 
+  const [startInteractionPosition, setStartInteractionPosition] =
+    useState<number>(0);
+
   function handleChangeActiveHeroIndex(newDirection: number) {
     setActiveHeroIndex((previousIndex) => previousIndex + newDirection);
+  }
+
+  function handleDragStart(event: DragEvent<HTMLDivElement>) {
+    setStartInteractionPosition(event.clientX);
+  }
+
+  function handleDragEnd(event: DragEvent<HTMLDivElement>) {
+    if (!startInteractionPosition) {
+      return;
+    }
+
+    const endInteractionPosition = event.clientX;
+    const diffPosition = endInteractionPosition - startInteractionPosition;
+
+    const newPosition = diffPosition > 0 ? -1 : 1;
+    handleChangeActiveHeroIndex(newPosition);
   }
 
   const transitionAudio = useMemo(() => new Audio('/songs/transition.mp3'), []);
@@ -98,7 +117,8 @@ export function Carousel({ heroes, activeId }: IProps) {
       <div className="carousel">
         <div
           className="carousel-wrapper"
-          onClick={() => handleChangeActiveHeroIndex(1)}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
         >
           <AnimatePresence mode="popLayout">
             {visibleHeroes.map((hero, position) => (
