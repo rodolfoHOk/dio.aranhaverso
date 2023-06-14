@@ -1,0 +1,19 @@
+.hero-title {
+  @apply text-[3.5rem] m-0;
+}
+
+.hero-subtitle {
+  @apply text-base font-bold uppercase;
+}
+
+.hero-details {
+  @apply w-[70%] my-4 mx-0 py-4 px-0 border-t border-t-white/50;
+}
+
+.hero-details table td {
+  @apply font-semibold pr-8;
+}
+
+.hero-details table .label {
+  @apply font-normal;
+}

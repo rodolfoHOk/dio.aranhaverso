@@ -1,0 +1,23 @@
+.carousel-container {
+  @apply flex;
+}
+
+.carousel {
+  @apply w-full flex-1;
+}
+
+.carousel-wrapper {
+  @apply relative h-[130vh] cursor-grab active:cursor-grabbing;
+}
+
+.carousel-details {
+  @apply relative mt-12 flex-1;
+}
+
+.carousel-hero {
+  @apply absolute left-0 h-full w-[500px];
+}
+
+.carousel-hero img {
+  @apply h-full w-full object-contain object-right-top;
+}

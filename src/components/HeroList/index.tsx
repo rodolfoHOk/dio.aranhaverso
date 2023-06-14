@@ -6,6 +6,7 @@ import { IHeroData } from '@/models/heroes';
 import './HeroList.styles.css';
 import { HeroPicture } from '../HeroPicture';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface IProps {
   heroes: IHeroData[];
@@ -37,7 +38,9 @@ export function HeroList({ heroes }: IProps) {
             whileTap={{ scale: 0.8 }}
             transition={{ duration: 0.75 }}
           >
-            <HeroPicture hero={hero} />
+            <Link href={`/hero/${hero.id}`}>
+              <HeroPicture hero={hero} />
+            </Link>
           </motion.div>
         ))}
       </motion.section>
