@@ -14,7 +14,7 @@ interface IProps {
 
 export function HeroList({ heroes }: IProps) {
   return (
-    <>
+    <div className="container">
       <motion.h1
         className={`${spiderManFont.className} title`}
         initial={{ opacity: 0 }}
@@ -44,6 +44,6 @@ export function HeroList({ heroes }: IProps) {
           </motion.div>
         ))}
       </motion.section>
-    </>
+    </div>
   );
 }
