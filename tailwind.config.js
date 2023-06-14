@@ -14,6 +14,9 @@ module.exports = {
         'default-bg': 'var(--background)',
       },
       screens: {
+        xs: '440px',
+        md: '840px',
+        md2: '960px',
         '3xl': 'var(--max-width)',
       },
     },

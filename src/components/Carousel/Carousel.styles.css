@@ -1,13 +1,13 @@
 .carousel-container {
-  @apply flex;
+  @apply flex flex-col md:flex-row;
 }
 
 .carousel {
-  @apply relative left-[-5%] w-full flex-1;
+  @apply relative left-[-40%] xs:left-[-15%] sm:left-[-5%] md:left-[-25%] lg:left-[-15%] xl:left-[-5%] w-full flex-1;
 }
 
 .carousel-wrapper {
-  @apply relative h-[130vh] cursor-grab active:cursor-grabbing;
+  @apply relative h-[40vh] md:h-[70vh] md2:h-[90vh] xl:h-[130vh] cursor-grab active:cursor-grabbing;
 }
 
 .carousel-details {
@@ -15,7 +15,7 @@
 }
 
 .carousel-hero {
-  @apply absolute left-0 h-full w-[500px];
+  @apply absolute left-0 h-full w-[200px] md:w-[280px] md2:w-[350px] lg:w-[500px];
 }
 
 .carousel-hero img {

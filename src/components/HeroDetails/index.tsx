@@ -18,7 +18,7 @@ export function HeroDetails({ data }: IProps) {
   const { id, name, universe, details } = data;
 
   return (
-    <div className={`${quicksand.className}`}>
+    <div className={`${quicksand.className} hero-container`}>
       <h1 className={`${spiderManFont.className} hero-title`}>
         {name} (Universo-{universe})
       </h1>
@@ -56,10 +56,11 @@ export function HeroDetails({ data }: IProps) {
         </table>
       </div>
 
-      <div className="hero-details">
+      <div className="hero-details flex flex-row md:flex-col justify-between md:justify-normal md:gap-1">
         <h2 className="hero-subtitle">Primeira Aparição</h2>
 
         <Image
+          className="mt-1"
           src={`/spiders/${id}-comic-book.png`}
           alt={`Primeira aparição nos quadrinhos de ${name} no universo ${universe}`}
           width={80}

@@ -1,19 +1,23 @@
+.hero-container {
+  @apply relative top-[-72px] md:top-0;
+}
+
 .hero-title {
-  @apply text-[3.5rem] m-0;
+  @apply text-3xl md:text-[3.5rem] md:leading-[3.5rem] w-full text-center md:text-start md:m-0;
 }
 
 .hero-subtitle {
-  @apply text-base font-bold uppercase;
+  @apply text-sm md:text-base font-bold uppercase;
 }
 
 .hero-details {
-  @apply w-[70%] my-4 mx-0 py-4 px-0 border-t border-t-white/50;
+  @apply md:w-[70%] md:my-4 mx-4 md:mx-0 py-1 md:py-4 px-0 border-t border-t-white/50;
 }
 
 .hero-details table td {
-  @apply font-semibold pr-8;
+  @apply text-sm md:text-base font-semibold pr-8;
 }
 
 .hero-details table .label {
-  @apply font-normal;
+  @apply text-xs xs:text-sm md:text-base font-normal;
 }
