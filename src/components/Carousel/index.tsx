@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { HeroDetails } from '../HeroDetails';
@@ -29,6 +29,35 @@ export function Carousel({ heroes, activeId }: IProps) {
   function handleChangeActiveHeroIndex(newDirection: number) {
     setActiveHeroIndex((previousIndex) => previousIndex + newDirection);
   }
+
+  const transitionAudio = useMemo(() => new Audio('/songs/transition.mp3'), []);
+
+  const voicesAudio: Record<string, HTMLAudioElement> = useMemo(
+    () => ({
+      'spider-man-616': new Audio('/songs/spider-man-616.mp3'),
+      'mulher-aranha-65': new Audio('/songs/mulher-aranha-65.mp3'),
+      'spider-man-1610': new Audio('/songs/spider-man-1610.mp3'),
+      'sp-dr-14512': new Audio('/songs/sp-dr-14512.mp3'),
+      'spider-ham-8311': new Audio('/songs/spider-ham-8311.mp3'),
+      'spider-man-90214': new Audio('/songs/spider-man-90214.mp3'),
+      'spider-man-928': new Audio('/songs/spider-man-928.mp3'),
+    }),
+    []
+  );
+
+  useEffect(() => {
+    if (!visibleHeroes) {
+      return;
+    }
+
+    transitionAudio.play();
+
+    const voiceAudio = voicesAudio[visibleHeroes[EPosition.MIDDLE].id];
+    if (voiceAudio) {
+      voiceAudio.volume = 0.3;
+      voiceAudio.play();
+    }
+  }, [visibleHeroes, transitionAudio, voicesAudio]);
 
   useEffect(() => {
     const htmlEl = document.querySelector('html');
