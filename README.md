@@ -27,3 +27,4 @@
 - clone repository with git
 - npm install
 - npm run dev
+- access url http://localhost:3000
