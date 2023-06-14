@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --max-width: 1920px;
+    --text-color: #fff;
+    --background: linear-gradient(#0069e3, #0056ba);
+
+    --spider-man-616-height: 360px;
+    --mulher-aranha-65-height: 300px;
+    --spider-man-1610-height: 324px;
+    --sp-dr-14512-height: 324px;
+    --spider-ham-8311-height: 146px;
+    --spider-man-90214-height: 376px;
+    --spider-man-928-height: 360px;
+
+    @apply h-screen;
+
+    transition: background 1s ease-in-out;
   }
 }
 
+html {
+  @apply absolute top-0 left-0 bg-default-bg h-full w-full;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply relative h-full m-auto max-w-[var(--max-width)] text-[var(--text-color)] overflow-hidden;
+}
+
+header {
+  @apply relative z-40 flex justify-between items-center mt-12 mx-12;
 }
