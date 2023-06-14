@@ -13,6 +13,9 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'default-bg': 'var(--background)',
       },
+      screens: {
+        '3xl': 'var(--max-width)',
+      },
     },
   },
   plugins: [],

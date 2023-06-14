@@ -1,0 +1,43 @@
+.title {
+  @apply text-[26vw] m-0 3xl:text-[30rem];
+}
+
+.heroes {
+  @apply absolute top-[40%] max-w-[calc(var(--max-width)-700px)] w-full flex justify-between items-end 3xl:top-[50%] 3xl:max-w-[calc(var(--max-width)-400px)];
+}
+
+.imageContainer {
+  @apply relative cursor-pointer;
+
+  img {
+    @apply h-full w-full object-contain object-bottom;
+  }
+
+  &.spider-man-616 {
+    @apply h-[var(--spider-man-616-height)];
+  }
+
+  &.mulher-aranha-65 {
+    @apply h-[var(--mulher-aranha-65-height)];
+  }
+
+  &.spider-man-1610 {
+    @apply h-[var(--spider-man-1610-height)];
+  }
+
+  &.sp-dr-14512 {
+    @apply h-[var(--sp-dr-14512-height)];
+  }
+
+  &.spider-ham-8311 {
+    @apply h-[var(--spider-ham-8311-height)];
+  }
+
+  &.spider-man-90214 {
+    @apply h-[var(--spider-man-90214-height)];
+  }
+
+  &.spider-man-928 {
+    @apply h-[var(--spider-man-928-height)];
+  }
+}
