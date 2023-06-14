@@ -1,8 +1,11 @@
+'use client';
+
 import { spiderManFont } from '@/fonts';
 import { IHeroData } from '@/models/heroes';
 
 import './HeroList.styles.css';
 import { HeroPicture } from '../HeroPicture';
+import { motion } from 'framer-motion';
 
 interface IProps {
   heroes: IHeroData[];
@@ -11,15 +14,33 @@ interface IProps {
 export function HeroList({ heroes }: IProps) {
   return (
     <>
-      <h1 className={`${spiderManFont.className} title`}>Personagens</h1>
+      <motion.h1
+        className={`${spiderManFont.className} title`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 2 }}
+      >
+        Personagens
+      </motion.h1>
 
-      <section className="heroes">
+      <motion.section
+        className="heroes"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
         {heroes.map((hero) => (
-          <div key={hero.id} className={`imageContainer ${hero.id}`}>
+          <motion.div
+            key={hero.id}
+            className={`imageContainer ${hero.id}`}
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ duration: 0.75 }}
+          >
             <HeroPicture hero={hero} />
-          </div>
+          </motion.div>
         ))}
-      </section>
+      </motion.section>
     </>
   );
 }
