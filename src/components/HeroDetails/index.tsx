@@ -14,7 +14,7 @@ interface IProps {
   data: IHeroData;
 }
 
-export default function HeroDetails({ data }: IProps) {
+export function HeroDetails({ data }: IProps) {
   const { id, name, universe, details } = data;
 
   return (

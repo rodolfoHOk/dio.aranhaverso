@@ -16,14 +16,8 @@
     --spider-man-90214-height: 376px;
     --spider-man-928-height: 360px;
 
-    @apply h-screen;
-
-    transition: background 1s ease-in-out;
+    @apply h-screen bg-cover transition-[background] ease-in-out duration-1000 [&:not(.hero-page)]:before:content-[""] [&:not(.hero-page)]:before:absolute [&:not(.hero-page)]:before:top-0 [&:not(.hero-page)]:before:w-full [&:not(.hero-page)]:before:h-full [&:not(.hero-page)]:before:bg-default-bg;
   }
-}
-
-html {
-  @apply absolute top-0 left-0 bg-default-bg h-full w-full;
 }
 
 body {

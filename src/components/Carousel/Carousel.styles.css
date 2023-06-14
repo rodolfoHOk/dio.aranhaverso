@@ -3,7 +3,7 @@
 }
 
 .carousel {
-  @apply w-full flex-1;
+  @apply relative left-[-5%] w-full flex-1;
 }
 
 .carousel-wrapper {
